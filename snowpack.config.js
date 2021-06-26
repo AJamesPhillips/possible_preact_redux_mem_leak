@@ -5,8 +5,7 @@ module.exports = {
     src: {url: '/dist'},
   },
   plugins: [
-    '@snowpack/plugin-typescript',
-    '@prefresh/snowpack',
+    '@snowpack/plugin-typescript'
   ],
   install: [
     /* ... */
@@ -24,7 +23,5 @@ module.exports = {
     /* ... */
   },
   alias: {
-    "react": "preact/compat",
-    "react-dom": "preact/compat"
   },
 };
