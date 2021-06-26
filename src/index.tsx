@@ -43,7 +43,7 @@ function App()
         <div>
             App
             <button onPointerDown={() => trigger_leak()}>Trigger leak</button>
-            {Array.from(Array(1000)).map(i => <SimpleConnectedComponent key={i} />)}
+            {Array.from(Array(1000)).map((_, i) => <SimpleConnectedComponent key={i} />)}
         </div>
     )
 }
