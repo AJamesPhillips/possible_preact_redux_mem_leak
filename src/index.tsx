@@ -1,5 +1,4 @@
-import * as React from "react"
-import ReactDOM from "react-dom"
+import { FunctionalComponent, h, render } from "preact"
 import { connect, Provider } from "react-redux"
 import { createStore, Action, AnyAction } from "redux"
 
@@ -35,7 +34,7 @@ function _SimpleConnectedComponent ()
 {
     return <div></div>
 }
-const SimpleConnectedComponent = connector(_SimpleConnectedComponent) as React.FunctionComponent<{}>
+const SimpleConnectedComponent = connector(_SimpleConnectedComponent) as FunctionalComponent<{}>
 
 
 function App()
@@ -44,7 +43,7 @@ function App()
         <div>
             App
             <button onPointerDown={() => trigger_leak()}>Trigger leak</button>
-            {Array.from(Array(1000)).map((_, i) => <SimpleConnectedComponent key={i} />)}
+            {Array.from(Array(1000)).map(i => <SimpleConnectedComponent key={i} />)}
         </div>
     )
 }
@@ -57,5 +56,5 @@ const store = createStore<{}, Action, {}, {}>(root_reducer as any, { a: 1 })
 
 if (root)
 {
-    ReactDOM.render(<Provider store={store}><App /></Provider>, root)
+    render(<Provider store={store}><App /></Provider>, root)
 }
