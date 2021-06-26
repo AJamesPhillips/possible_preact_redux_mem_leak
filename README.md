@@ -14,5 +14,10 @@ Instructions to recreate:
 5. repeat a few times then stop recording
 
 Blue arrows indicate when garbage collection was manually triggered
-![Screenshot](./mem_leak.png)
+![Screenshot](./preact_mem_leak.png)
 
+This could not be created when using React [#5176411](https://github.com/AJamesPhillips/possible_preact_redux_mem_leak/commit/5176411)
+![Screenshot](./react_no_mem_leak.png)
+
+Or on CodeSandbox
+![Screenshot](https://user-images.githubusercontent.com/526509/123523073-564b4780-d6b9-11eb-8d14-2d8d42c9de39.png)
